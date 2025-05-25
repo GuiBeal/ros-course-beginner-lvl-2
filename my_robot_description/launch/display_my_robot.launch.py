@@ -11,7 +11,7 @@ def generate_launch_description():
         get_package_share_path("my_robot_description"), "urdf", "my_robot.urdf.xacro"
     )
     rviz_config_path = os.path.join(
-        get_package_share_path("my_robot_description"), "rviz", "urdf_config.rviz"
+        get_package_share_path("my_robot_description"), "rviz", "my_robot.rviz"
     )
 
     robot_description = ParameterValue(Command(["xacro ", urdf_path]), value_type=str)
