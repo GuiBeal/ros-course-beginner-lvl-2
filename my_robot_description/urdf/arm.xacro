@@ -25,9 +25,10 @@
       </geometry>
       <origin xyz="0 0 ${arm_base_height / 2}" rpy="0 0 0" />
     </collision>
-    <xacro:box_inertial mass="${arm_base_mass}"
-      size_x="${arm_base_length}" size_y="${arm_base_width}" size_z="${arm_base_height}"
-      o_xyz="0 0 ${arm_base_height / 2}" o_rpy="0 0 0" />
+    <xacro:inertial_box mass="${arm_base_mass}"
+      x="${arm_base_length}" y="${arm_base_width}" z="${arm_base_height}">
+      <origin xyz="0 0 ${arm_base_height / 2}" rpy="0 0 0" />
+    </xacro:inertial_box>
   </link>
 
   <link name="forearm_link">
@@ -44,9 +45,10 @@
       </geometry>
       <origin xyz="0 0 ${forearm_length / 2}" rpy="0 0 0" />
     </collision>
-    <xacro:cylinder_inertial mass="${forearm_mass}"
-      radius="${forearm_radius}" length="${forearm_length}"
-      o_xyz="0 0 ${forearm_length / 2}" o_rpy="0 0 0" />
+    <xacro:inertial_cylinder mass="${forearm_mass}"
+      radius="${forearm_radius}" length="${forearm_length}">
+      <origin xyz="0 0 ${forearm_length / 2}" rpy="0 0 0" />
+    </xacro:inertial_cylinder>
   </link>
 
   <link name="hand_link">
@@ -63,9 +65,10 @@
       </geometry>
       <origin xyz="0 0 ${hand_length / 2}" rpy="0 0 0" />
     </collision>
-    <xacro:cylinder_inertial mass="${hand_mass}"
-      radius="${hand_radius}" length="${hand_length}"
-      o_xyz="0 0 ${hand_length / 2}" o_rpy="0 0 0" />
+    <xacro:inertial_cylinder mass="${hand_mass}"
+      radius="${hand_radius}" length="${hand_length}">
+      <origin xyz="0 0 ${hand_length / 2}" rpy="0 0 0" />
+    </xacro:inertial_cylinder>
   </link>
 
   <joint name="arm_base_forearm_joint" type="revolute">

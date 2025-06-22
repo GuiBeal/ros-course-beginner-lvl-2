@@ -17,9 +17,10 @@
         <box size="${camera_length} ${camera_width} ${camera_height}" />
       </geometry>
     </collision>
-    <xacro:box_inertial mass="${camera_mass}"
-      size_x="${camera_length}" size_y="${camera_width}" size_z="${camera_height}"
-      o_xyz="0 0 0" o_rpy="0 0 0" />
+    <xacro:inertial_box mass="${camera_mass}"
+      x="${camera_length}" y="${camera_width}" z="${camera_height}">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:inertial_box>
   </link>
 
   <link name="camera_link_optical" />
